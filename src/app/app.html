@@ -1,1 +1,27 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-menu id="menuPrincipal" [content]="content" persistent="true" side="left">    
+  <ion-header>
+    <ion-navbar hideBackButton>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>  
+      <ion-title>Menu</ion-title>  
+    </ion-navbar>          
+  </ion-header>
+
+  <ion-content>
+    <ion-list>      
+      <button menuClose ion-item *ngFor="let p of pages" (click)="abrirPagina(p)">        
+        <ion-icon *ngIf="p.title == 'Ranking'" name="md-medal"></ion-icon>
+        <ion-icon *ngIf="p.title == 'Recolección y rutas de aseo'" name="locate"></ion-icon>
+        <ion-icon *ngIf="p.title == 'Tips de reciclaje'" name="leaf"></ion-icon>
+        <ion-icon *ngIf="p.title == 'Evaluaciones'" name="book"></ion-icon>
+        <ion-icon *ngIf="p.title == 'Cerrar sesión'" name="power"></ion-icon>
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+<ion-nav [root]="rootPage" #content></ion-nav>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->

@@ -1,0 +1,84 @@
+<!--
+  Generated template for the RegistroPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+	<ion-navbar>
+    	<ion-title>Únete</ion-title>
+  	</ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="formUnete" (ngSubmit)="signIn()">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Primer nombre</ion-label>
+        <ion-input type="text" formControlName="pNombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Segundo nombre</ion-label>
+        <ion-input type="text" formControlName="sNombre"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Primer apellido</ion-label>
+        <ion-input type="text" formControlName="pApellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Segundo apellido</ion-label>
+        <ion-input type="text" formControlName="sApellido"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Número de documento</ion-label>
+        <ion-input type="text" formControlName="documento"></ion-input>        
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Nombre de usuario</ion-label>
+        <ion-input type="text" formControlName="nick"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="text" formControlName="email"></ion-input>
+        <ion-select formControlName="emailServer">
+            <ion-option value="gmail">@gmail.com</ion-option>
+            <ion-option value="hotmail">@hotmail.com</ion-option>
+            <ion-option value="yahoo">@yahoo.com</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Barrio</ion-label>
+        <ion-select formControlName="barrio">
+          <ion-option value="1">Acapulco</ion-option>
+          <ion-option value="7">Alameda</ion-option>
+          <ion-option value="9">Bochica</ion-option>
+          <ion-option value="5">Bolivia</ion-option>
+          <ion-option value="10">El Paseo</ion-option>
+          <ion-option value="3">La Granja</ion-option>
+          <ion-option value="4">Los Monjes</ion-option>
+          <ion-option value="2">Minuto de Dios</ion-option>
+          <ion-option value="8">Molinos de Viento</ion-option>
+          <ion-option value="6">San Basilio</ion-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Contraseña</ion-label>
+        <ion-input type="password" formControlName="pPass">
+        </ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Repetir contraseña</ion-label>
+        <ion-input type="password" formControlName="sPass">
+        </ion-input>
+      </ion-item>
+      <ion-item *ngIf="!this.validarPpassSpass()">
+          <p style="color:red; font-style: italic;">
+            Las contraseñas no coinciden.
+          </p>
+      </ion-item>
+    </ion-list>
+    <button ion-button type="submit" color="secondary" [disabled]="!this.formUnete.valid && !this.validarPpassSpass()">
+      Registrarme
+    </button>
+  </form>
+</ion-content>
