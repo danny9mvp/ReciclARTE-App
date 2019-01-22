@@ -5,9 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { InicioPage } from '../pages/inicio/inicio';
 import { HomePage } from '../pages/home/home';
 import { UnetePage } from '../pages/unete/unete';
 import { IngresaPage } from '../pages/ingresa/ingresa';
+import { AcercaDePage } from '../pages/acerca-de/acerca-de';
 import { MapaPage } from '../pages/mapa/mapa';
 import { GuiUsuarioPage } from '../pages/gui-usuario/gui-usuario';
 import { EvaluacionesPage } from '../pages/evaluaciones/evaluaciones';
@@ -20,10 +22,12 @@ import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
-    MyApp,    
+    MyApp,
+    InicioPage,    
     HomePage,
     UnetePage,
     IngresaPage,
+    AcercaDePage,
     MapaPage,
     GuiUsuarioPage,
     EvaluacionesPage,
@@ -39,9 +43,11 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    InicioPage,
     HomePage,
     UnetePage,
     IngresaPage,
+    AcercaDePage,
     MapaPage,
     GuiUsuarioPage,
     EvaluacionesPage,

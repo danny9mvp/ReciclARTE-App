@@ -12,19 +12,25 @@
 
 
 <ion-content padding>
-	<form [formGroup]=formIngresa (ngSubmit)="logIn()">
-		<ion-list>
-			<ion-item>
-				<ion-label floating>Usuario</ion-label>
-				<ion-input type="text" formControlName="usuario"></ion-input>
-			</ion-item>
-			<ion-item>
-				<ion-label floating>Contraseña</ion-label>
-				<ion-input type="password" formControlName="pass"></ion-input>
-			</ion-item>
-		</ion-list>
-		<button ion-button type="submit" color="secondary" [disabled]="!this.formIngresa.valid">
-			Entrar
-		</button>
-	</form>
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12 col-md-6 col-lg-4 col-xl-3>
+			<form [formGroup]=formIngresa (ngSubmit)="logIn()">
+				<ion-list>
+					<ion-item>
+						<ion-label floating>Usuario</ion-label>
+						<ion-input type="text" formControlName="usuario"></ion-input>
+					</ion-item>
+					<ion-item>
+						<ion-label floating>Contraseña</ion-label>
+						<ion-input type="password" formControlName="pass"></ion-input>
+					</ion-item>
+				</ion-list>
+				<button ion-button type="submit" color="secondary" [disabled]="!this.formIngresa.valid">
+					Entrar
+				</button>
+			</form>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
 </ion-content>

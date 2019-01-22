@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, MenuController } from 'ionic-angular';
 import { UnetePage } from '../unete/unete';
 import { IngresaPage } from '../ingresa/ingresa';
+import { AcercaDePage } from '../acerca-de/acerca-de';
 import { RestProvider } from '../../providers/rest/rest';
 @Component({
   selector: 'page-home',
@@ -17,5 +18,8 @@ export class HomePage {
   }
   redirectToIngresa(){
   	this.navCtrl.push(IngresaPage);
+  }
+  redirectToAcercaDe(){
+    this.navCtrl.push(AcercaDePage);
   }
 }

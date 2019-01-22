@@ -47,23 +47,18 @@ export class IngresaPage {
 	  		this.navCtrl.push(GuiUsuarioPage);
         this.menuCtrl.enable(true, 'menuPrincipal');
 	  	},
-	  	error => console.log(error)
+	  	error => {
+        let alertaError = this.alerta.create({
+        title: "Error",
+        message: error.message,
+        buttons: ['Entendido']
+      });
+      alertaError.present();
+      }
 	  	);
-	  	let alertaSuccess = this.alerta.create({
-	  		title: "Información",
-	  		message: "Bienvenido.",
-	  		buttons: ['Entendido']
-	  	});	  	
-	  	alertaSuccess.present();
   	}
   	catch(e){
-  		console.log(e);
-  		let alertaError = this.alerta.create({
-	  		title: "Error",
-	  		message: "Ha ocurrido un error",
-	  		buttons: ['Entendido']
-  		});
-  		alertaError.present();
+  		console.log(e);  		
   	}  	
   }
   setDatosSesion(datos){

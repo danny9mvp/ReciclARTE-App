@@ -10,7 +10,8 @@
 
   <ion-content>
     <ion-list>      
-      <button menuClose ion-item *ngFor="let p of pages" (click)="abrirPagina(p)">        
+      <button menuClose ion-item *ngFor="let p of pages" (click)="abrirPagina(p)">
+        <ion-icon *ngIf="p.title == 'Inicio'" name="home"></ion-icon>        
         <ion-icon *ngIf="p.title == 'Ranking'" name="md-medal"></ion-icon>
         <ion-icon *ngIf="p.title == 'Recolección y rutas de aseo'" name="locate"></ion-icon>
         <ion-icon *ngIf="p.title == 'Tips de reciclaje'" name="leaf"></ion-icon>

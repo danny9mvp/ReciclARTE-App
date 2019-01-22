@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { InicioPage } from '../pages/inicio/inicio';
 import { HomePage } from '../pages/home/home';
 import { GuiUsuarioPage } from '../pages/gui-usuario/gui-usuario';
 import { MapaPage } from '../pages/mapa/mapa';
@@ -15,7 +16,8 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
   rootPage:any = HomePage;
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
-    this.pages = [      
+    this.pages = [
+      { title: 'Inicio', component: InicioPage},    
       { title: 'Ranking', component: GuiUsuarioPage},      
       { title: 'Recolección y rutas de aseo', component: MapaPage },
       { title: 'Tips de reciclaje', component: TipsPage },
